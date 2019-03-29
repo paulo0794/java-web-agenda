@@ -9,34 +9,51 @@
 <title>Cadastro</title>
 </head>
 <body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+		<a class="navbar-brand">Agenda</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link"
+					href="index.html">Home <span class="sr-only">(current)</span></a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="cadastropessoas.html">Cadastrar <span class="sr-only">(current)</span></a>
+				</li>
+		</div>
+	</nav>
+
 	<div class="container">
-		<h1>Cadastro de Pessoas</h1>
+		<h1 class="text-center">Cadastro</h1>
 		<form action="cadastra-usuario">
 			<div class="form-group">
 				<label for="name">Nome</label> <input name="name" type="text"
 					class="form-control" id="name">
 			</div>
-			<div class="form-group">
-				<label for="phone">Telefone</label> <input name="phone" type="tel " data-mask="(99)99999-9999"
-					class="form-control" id="phone">
-			</div>
-			<div class="form-group">
-				<label for="phone">E-mail</label> <input name="email" type="email"
-					class="form-control" id="email">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="phone">Telefone</label> <input name="phone" type="tel "
+						data-mask="(99)99999-9999" class="form-control" id="phone">
+				</div>
+
+				<div class="form-group col-md-6">
+					<label for="phone">E-mail</label> <input name="email" type="email"
+						class="form-control" id="email">
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="end">Endereço</label> <input name="end" type="text"
 					class="form-control" id="end">
 			</div>
 			<button type="submit" class="btn btn-dark">Enviar</button>
-			
-			<a class="btn btn-danger" href="index.html">Voltar</a>
+
+			<a class="btn btn-warning" href="index.html">Voltar</a>
 		</form>
 	</div>
-		
-<script src="js/jquery.js" type="text/javascript"></script>
-<script src="js/bootstrap.js" type="text/javascript"></script>
-<script src="js/inputMask.js"></script>
+
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/bootstrap.js" type="text/javascript"></script>
+	<script src="js/inputMask.js"></script>
 
 </body>
 </html>

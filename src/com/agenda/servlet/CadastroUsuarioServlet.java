@@ -14,7 +14,6 @@ public class CadastroUsuarioServlet extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
 		
 		
 		Pessoa pessoa = new Pessoa();

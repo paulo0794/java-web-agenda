@@ -6,7 +6,7 @@ public class PessoaDAO {
 	
 	public void recebe(Pessoa pessoa) {
 		
-		System.out.println(pessoa.getNome());
+		String SQL = "insert into pessoas (nome, email, endereco, telefone) values (?,?,?,?)";
 	}
 
 }

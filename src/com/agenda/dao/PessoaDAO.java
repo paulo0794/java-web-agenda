@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import com.agenda.modelo.Pessoa;
 import com.agenda.util.ConnectionFactory;
 import com.mysql.jdbc.Connection;
-
 public class PessoaDAO {
 	
 	private Connection connection;

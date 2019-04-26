@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,16 +39,18 @@
 					<th scope="col">Nome</th>
 					<th scope="col">Telefone</th>
 					<th scope="col">E-mail</th>
-					<th scope="col">Endereço</th>
+					<th scope="col">EndereÃ§o</th>
 				</tr>
 			</thead>
 			<tbody>
+			<c:forEach var="pessoa" items="${pessoas}">
 				<tr>
-					<td>Jota</td>
-					<td>(11)99999-9999</td>
-					<td>email@email.com</td>
-					<td>Rua das ruas</td>
+					<td>${pessoa.nome}</td>
+					<td>${pessoa.email}</td>
+					<td>${pessoa.end}</td>
+					<td>${pessoa.phone}</td>
 				</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>

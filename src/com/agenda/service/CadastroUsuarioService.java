@@ -13,7 +13,6 @@ public class CadastroUsuarioService {
 		
 		dao.recebe(pessoa);
 		
-		System.out.println(buscaPessoas());
 
 	}
 	

@@ -25,7 +25,7 @@
 					href="cadastropessoas.html">Cadastrar <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item active"><a class="nav-link"
-					href="listar_contato.html">Contatos <span class="sr-only">(current)</span></a>
+					href="busca-contato">Contatos <span class="sr-only">(current)</span></a>
 				</li>
 		</div>
 	</nav>
@@ -37,9 +37,10 @@
 			<thead>
 				<tr>
 					<th scope="col">Nome</th>
-					<th scope="col">Telefone</th>
 					<th scope="col">E-mail</th>
-					<th scope="col">EndereÃ§o</th>
+					<th scope="col">Endereço</th>
+					<th scope="col">Telefone</th>
+					<th scope="col">Opções</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -49,6 +50,7 @@
 					<td>${pessoa.email}</td>
 					<td>${pessoa.end}</td>
 					<td>${pessoa.phone}</td>
+					<td><button><a href="remover-contato">Delete</a></button></td>
 				</tr>
 				</c:forEach>
 			</tbody>

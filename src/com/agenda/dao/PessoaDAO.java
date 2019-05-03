@@ -18,7 +18,6 @@ public class PessoaDAO {
 		
 		String SQL = "insert into pessoas (nome, email, endereco, telefone) values (?,?,?,?)";
 		
-		
 	try {
 		
 		this.connection = new ConnectionFactory().getConnetion();
@@ -59,7 +58,6 @@ public class PessoaDAO {
 				pessoa.setEnd(rs.getString("endereco"));
 				pessoa.setPhone(rs.getString("telefone"));
 				
-				
 				pessoas.add(pessoa);
 				
 			}
@@ -71,7 +69,6 @@ public class PessoaDAO {
 			// TODO: handle exception
 		}
 		return null;
-		
 		
 	}
 

@@ -52,7 +52,7 @@ public class PessoaDAO {
 			
 			while (rs.next()) {
 				Pessoa pessoa = new Pessoa();
-				
+				pessoa.setId(rs.getLong("id"));
 				pessoa.setNome(rs.getString("nome"));
 				pessoa.setEmail(rs.getString("email"));
 				pessoa.setEnd(rs.getString("endereco"));
@@ -71,5 +71,27 @@ public class PessoaDAO {
 		return null;
 		
 	}
+	
+public void remove(Pessoa pessoa) {
+		
+		String SQL = "delete from pessoas where id=?";
+		try {
+		
+		this.connection = new ConnectionFactory().getConnetion();
+		PreparedStatement stmt = connection.prepareStatement(SQL);
+		stmt.setLong(1, pessoa.getId());
+		stmt.execute();
+		stmt.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+}
+
+
+
+		public void alterar(Pessoa pessoa) {
+			String SQL = "update pessoas set nome=?, email=?, endereco=?, telefone=?, where id=?";
+		}
+
 
 }

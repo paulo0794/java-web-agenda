@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.agenda.modelo.Pessoa;
 import com.agenda.service.CadastroUsuarioService;
 
 @WebServlet("/remover-contato")
@@ -19,10 +20,14 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 	  
 	  CadastroUsuarioService service = new CadastroUsuarioService();
 	  
-	  service.removeContato(null);
-			  
-			  
-	  System.out.println("Teste");
+	  long id = Long.parseLong(req.getParameter("id"));
+		
+		Pessoa pessoa = new Pessoa();
+		pessoa.setId(id);
+		
+		service.removeContato(pessoa);
+		
+		resp.sendRedirect("busca-contato");
 	
 }
 	

@@ -18,7 +18,7 @@
 				<li class="nav-item active"><a class="nav-link"
 					href="index.html">Home <span class="sr-only">(current)</span></a></li>
 				<li class="nav-item active"><a class="nav-link"
-					href="cadastropessoas.html">Cadastrar <span class="sr-only">(current)</span></a>
+					href="cadastropessoas.jsp">Cadastrar <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item active"><a class="nav-link"
 					href="busca-contato">Contatos <span class="sr-only">(current)</span></a>
@@ -30,22 +30,22 @@
 		<h1 class="text-center">Cadastro</h1>
 		<form action="cadastra-usuario">
 			<div class="form-group">
-				<label for="name">Nome</label> <input name="name" type="text"
+				<label for="name">Nome</label> <input value="${param.nome}" name="name" type="text"
 					class="form-control" id="name">
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label for="phone">Telefone</label> <input name="phone" type="tel"
+					<label for="phone">Telefone</label> <input value="${param.phone}" name="phone" type="tel"
 						data-mask="(99)99999-9999" class="form-control" id="phone">
 				</div>
 
 				<div class="form-group col-md-6">
-					<label for="phone">E-mail</label> <input name="email" type="email"
+					<label for="phone">E-mail</label> <input value="${param.email}" name="email" type="email"
 						class="form-control" id="email">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="end">Endereço</label> <input name="end" type="text"
+				<label for="end">Endereço</label> <input value="${param.end}" name="end" type="text"
 					class="form-control" id="end">
 			</div>
 			<button type="submit" class="btn btn-dark">Enviar</button>

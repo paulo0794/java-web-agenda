@@ -46,11 +46,14 @@
 			<tbody>
 			<c:forEach var="pessoa" items="${pessoas}">
 				<tr>
+					<td>${pessoa.id}</td>
 					<td>${pessoa.nome}</td>
 					<td>${pessoa.email}</td>
 					<td>${pessoa.end}</td>
 					<td>${pessoa.phone}</td>
-					<td><button><a href="remover-contato">Delete</a></button></td>
+					<td><button><a href="remover-contato?id=${pessoa.id}">Delete</a></button>
+						<button><a href="cadastropessoas.jsp?id=${pessoa.id}&nome=${pessoa.nome}&email=${pessoa.email}&end=${pessoa.end}&phone=${pessoa.phone}">Editar</a></button>					
+					</td>
 				</tr>
 				</c:forEach>
 			</tbody>

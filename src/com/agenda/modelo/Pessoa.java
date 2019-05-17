@@ -5,6 +5,7 @@ private String nome;
 private String phone;
 private String email;
 private String end;
+private Long id;
 
 public String getNome() {
 	return nome;
@@ -29,6 +30,16 @@ public String getEnd() {
 }
 public void setEnd(String end) {
 	this.end = end;
+}
+
+public long getId() {
+	// TODO Auto-generated method stub
+	
+	return this.id;
+}
+
+public void setId(long id) {
+	this.id = id;
 }
 
 }

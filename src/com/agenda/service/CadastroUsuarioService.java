@@ -13,7 +13,6 @@ public class CadastroUsuarioService {
 		
 		dao.recebe(pessoa);
 		
-
 	}
 	
 	public List<Pessoa> buscaPessoas() {
@@ -23,9 +22,16 @@ public class CadastroUsuarioService {
 	}
 
 	public void removeContato(Pessoa Pessoa) {
+		PessoaDAO dao = new PessoaDAO();
+		dao.remove(Pessoa);
 		
-		
-	}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+	}
+	
+	public void alterar(Pessoa pessoa) {
+
+		PessoaDAO dao = new PessoaDAO();
+		dao.alterar(pessoa);
+	}
 	
 
 }

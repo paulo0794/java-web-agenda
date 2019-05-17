@@ -30,7 +30,7 @@ public class CadastroUsuarioServlet extends HttpServlet {
 		
 		response.sendRedirect("busca-contato");
 		
-		try {
+		
 			if (null != request.getParameter("id") && !request.getParameter("id").equals("") ) {
 				service.alterar(pessoa);
 				
@@ -38,8 +38,8 @@ public class CadastroUsuarioServlet extends HttpServlet {
 				
 			}else {
 				
-				service.salvar(pessoa);
+				
 			}
-		}
+		
 	}
 }

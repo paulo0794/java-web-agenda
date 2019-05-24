@@ -22,7 +22,7 @@
 				<li class="nav-item active"><a class="nav-link"
 					href="index.html">Home <span class="sr-only">(current)</span></a></li>
 				<li class="nav-item active"><a class="nav-link"
-					href="cadastropessoas.html">Cadastrar <span class="sr-only">(current)</span></a>
+					href="cadastropessoas.jsp">Cadastrar <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item active"><a class="nav-link"
 					href="busca-contato">Contatos <span class="sr-only">(current)</span></a>

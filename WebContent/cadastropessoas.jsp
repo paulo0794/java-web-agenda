@@ -29,6 +29,9 @@
 	<div class="container">
 		<h1 class="text-center">Cadastro</h1>
 		<form action="cadastra-usuario">
+		
+			<input type="hidden" id="id" name="id" value="${param.id}">
+			
 			<div class="form-group">
 				<label for="name">Nome</label> <input value="${param.nome}" name="name" type="text"
 					class="form-control" id="name">
@@ -45,7 +48,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="end">EndereÃ§o</label> <input value="${param.end}" name="end" type="text"
+				<label for="end">Endereço</label> <input value="${param.end}" name="end" type="text"
 					class="form-control" id="end">
 			</div>
 			<button type="submit" class="btn btn-dark">Enviar</button>

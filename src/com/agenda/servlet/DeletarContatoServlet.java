@@ -20,7 +20,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 	  
 	  CadastroUsuarioService service = new CadastroUsuarioService();
 	  
-	  long id = Long.parseLong(req.getParameter("id"));
+	  int id = Integer.parseInt(req.getParameter("id"));
 		
 		Pessoa pessoa = new Pessoa();
 		pessoa.setId(id);

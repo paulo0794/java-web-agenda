@@ -13,23 +13,28 @@ import com.mysql.jdbc.Connection;
 public class PessoaDAO {
 
 	private Connection connection;
+	private PreparedStatement stmt;
 
+	public PessoaDAO(){
+		this.connection = ConnectionFactory().getConnetion();
+	}
+	
+	
 	public void recebe(Pessoa pessoa) {
 
 		String SQL = "insert into pessoas (nome, email, endereco, telefone) values (?,?,?,?)";
 
 		try {
+			
+			this.stmt = this.connection.prepareStatement(SQL);
 
-			this.connection = new ConnectionFactory().getConnetion();
-			PreparedStatement stmt = this.connection.prepareStatement(SQL);
+			this.stmt.setString(1, pessoa.getNome());
+			this.stmt.setString(2, pessoa.getEmail());
+			this.stmt.setString(3, pessoa.getEnd());
+			this.stmt.setString(4, pessoa.getPhone());
 
-			stmt.setString(1, pessoa.getNome());
-			stmt.setString(2, pessoa.getEmail());
-			stmt.setString(3, pessoa.getEnd());
-			stmt.setString(4, pessoa.getPhone());
-
-			stmt.execute();
-			stmt.close();
+			this.stmt.execute();
+			this.stmt.close();
 
 			buscaPessoas();
 		} catch (SQLException e) {
@@ -43,8 +48,7 @@ public class PessoaDAO {
 
 		try {
 
-			this.connection = new ConnectionFactory().getConnetion();
-			PreparedStatement stmt = this.connection.prepareStatement(SQL);
+			this.stmt = this.connection.prepareStatement(SQL);
 
 			List<Pessoa> pessoas = new ArrayList<Pessoa>();
 
@@ -62,7 +66,7 @@ public class PessoaDAO {
 
 			}
 
-			stmt.close();
+			this.stmt.close();
 			this.connection.close();
 			return pessoas;
 		} catch (Exception e) {
@@ -76,11 +80,11 @@ public class PessoaDAO {
 		String SQL = "delete from pessoas where id=?";
 		try {
 
-			this.connection = new ConnectionFactory().getConnetion();
-			PreparedStatement stmt = connection.prepareStatement(SQL);
-			stmt.setInt(1, pessoa.getId());
-			stmt.execute();
-			stmt.close();
+			this.stmt = this.connection.prepareStatement(SQL);
+			
+			this.stmt.setInt(1, pessoa.getId());
+			this.stmt.execute();
+			this.stmt.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -91,16 +95,15 @@ public class PessoaDAO {
 
 		try {
 
-			this.connection = new ConnectionFactory().getConnetion();
-			PreparedStatement stmt = this.connection.prepareStatement(SQL);
+			this.stmt = this.connection.prepareStatement(SQL);
 
-			stmt.setString(1, pessoa.getNome());
-			stmt.setString(2, pessoa.getEmail());
-			stmt.setString(3, pessoa.getEnd());
-			stmt.setString(4, pessoa.getPhone());
-			stmt.setInt(5, pessoa.getId());
-			stmt.execute();
-			stmt.close();
+			this.stmt.setString(1, pessoa.getNome());
+			this.stmt.setString(2, pessoa.getEmail());
+			this.stmt.setString(3, pessoa.getEnd());
+			this.stmt.setString(4, pessoa.getPhone());
+			this.stmt.setInt(5, pessoa.getId());
+			this.stmt.execute();
+			this.stmt.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
